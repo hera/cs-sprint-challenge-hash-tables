@@ -1,10 +1,20 @@
-def has_negatives(a):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+def has_negatives(arr):
+    occurencies = {}
 
-    return result
+    for i in arr:
+        positive = abs(i)
+        if positive in occurencies:
+            occurencies[positive] += 1
+        else:
+            occurencies[positive] = 1
+    
+    have_pair = []
+
+    for num in occurencies:
+        if occurencies[num] > 1:
+            have_pair.append(num)
+
+    return have_pair
 
 
 if __name__ == "__main__":
