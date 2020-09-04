@@ -1,11 +1,20 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    occurencies = {}
 
-    return result
+    for arr in arrays:
+        for num in arr:
+            if num in occurencies:
+                occurencies[num] += 1
+            else:
+                occurencies[num] = 1
+    
+    intersections = []
 
+    for i in occurencies:
+        if occurencies[i] == len(arrays):
+            intersections.append(i)
+    
+    return intersections
 
 if __name__ == "__main__":
     arrays = []
